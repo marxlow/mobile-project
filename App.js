@@ -23,6 +23,7 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import {Button} from '@ant-design/react-native';
 
 const App: () => React$Node = () => {
   return (
