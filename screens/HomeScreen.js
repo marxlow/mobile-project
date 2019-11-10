@@ -2,16 +2,11 @@
 import React from 'react';
 
 import {View, Text} from 'react-native';
-import PrimaryButton from '../shared/components/PrimaryButton';
+import ClickableButton from '../shared/components/ClickableButton';
 import BrandLogo from '../shared/components/BrandLogo';
 
 class HomeScreen extends React.Component {
-  state = {
-    isLoading: false,
-  };
-
   render() {
-    const {isLoading} = this.state;
     return (
       <View
         style={{
@@ -31,11 +26,12 @@ class HomeScreen extends React.Component {
         </View>
         <View style={{flex: 2, alignSelf: 'stretch'}}>
           <View style={{flex: 1}}>
-            <PrimaryButton
+            <ClickableButton
               title="Log In"
               wrapperStyle={{marginHorizontal: '5%', marginBottom: 10}}
             />
-            <PrimaryButton
+            <ClickableButton
+              type="secondary"
               title="Sign Up"
               wrapperStyle={{marginHorizontal: '5%'}}
             />
