@@ -13,14 +13,14 @@ const AppNavigator = createStackNavigator(
     Login: {
       screen: LoginScreen,
     },
-    Dashboard: {
-      screen: DashboardScreen,
-    },
     Onboarding: {
       screen: OnboardingScreen,
     },
+    Dashboard: {
+      screen: DashboardScreen,
+    },
   },
-  {initialRouteName: 'Home'},
+  {initialRouteName: 'Dashboard'},
 );
 
 export default createAppContainer(AppNavigator);

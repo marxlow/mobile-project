@@ -71,7 +71,7 @@ class OnboardingScreen extends React.Component {
                       {title}
                     </Text>
                   </View>
-                  {/* Decsription */}
+                  {/* Description */}
                   <View style={{width: '90%'}}>
                     <Text
                       style={{
