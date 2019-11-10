@@ -2,6 +2,7 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import {Carousel} from '@ant-design/react-native';
+import {NavigationActions} from 'react-navigation';
 import BrandLogo from '../shared/components/BrandLogo';
 
 const onboardingTexts = [
@@ -24,8 +25,10 @@ class OnboardingScreen extends React.Component {
     if (index === onboardingTexts.length) {
       // Upon reaching the end of onboarding, wait 1s before navigating to dashboard
       setTimeout(() => {
-        this.props.navigation.push('Dashboard');
-      }, 1000);
+        this.props.navigation.reset([
+          NavigationActions.navigate({routeName: 'Dashboard'}),
+        ]);
+      }, 500);
     }
   };
   render() {
