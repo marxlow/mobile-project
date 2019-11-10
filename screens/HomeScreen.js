@@ -7,12 +7,14 @@ import BrandLogo from '../shared/components/BrandLogo';
 
 class HomeScreen extends React.Component {
   render() {
+    const {navigation} = this.props;
     return (
       <View
         style={{
           flex: 1,
           alignItems: 'center',
           flexDirection: 'column',
+          margin: 20,
         }}>
         <View style={{flex: 7}}>
           <View
@@ -28,6 +30,7 @@ class HomeScreen extends React.Component {
           <View style={{flex: 1}}>
             <ClickableButton
               title="Log In"
+              onPress={() => navigation.push('Login')}
               wrapperStyle={{marginHorizontal: '5%', marginBottom: 10}}
             />
             <ClickableButton

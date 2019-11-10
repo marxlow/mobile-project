@@ -10,12 +10,12 @@ const getTheme = type => {
   return {backgroundColor: '#57b5a4', textColor: 'white'};
 };
 
-const ClickableButton = ({onClick, title, wrapperStyle, type = 'primary'}) => {
+const ClickableButton = ({onPress, title, wrapperStyle, type = 'primary'}) => {
   const theme = getTheme(type);
   return (
     <View style={wrapperStyle}>
       <Button
-        onClick={onClick}
+        onPress={onPress}
         style={{
           alignSelf: 'stretch',
           backgroundColor: theme.backgroundColor,
