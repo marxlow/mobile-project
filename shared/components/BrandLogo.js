@@ -8,11 +8,21 @@ const getImageDimension = size => {
 
   return {width: 250, height: 250};
 };
-const BrandLogo = ({size = 'lg'}) => {
+
+const getRoundedStyle = (rounded, size) => {
+  if (!rounded) {
+    return;
+  }
+
+  return {borderRadius: size / 2};
+};
+
+const BrandLogo = ({size = 'lg', rounded = false}) => {
   const dimension = getImageDimension(size);
+  const roundedStyle = getRoundedStyle(rounded, dimension.width);
   return (
     <Image
-      style={{width: dimension.width, height: dimension.height}}
+      style={{...dimension, ...roundedStyle}}
       source={{
         uri:
           'https://icon-library.net/images/piggy-bank-icon-png/piggy-bank-icon-png-9.jpg',

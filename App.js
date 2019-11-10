@@ -3,6 +3,7 @@ import {createAppContainer} from 'react-navigation';
 import HomeScreen from './screens/HomeScreen';
 import LoginScreen from './screens/LoginScreen';
 import DashboardScreen from './screens/DashboardScreen';
+import OnboardingScreen from './screens/OnboardingScreen';
 
 const AppNavigator = createStackNavigator(
   {
@@ -14,6 +15,9 @@ const AppNavigator = createStackNavigator(
     },
     Dashboard: {
       screen: DashboardScreen,
+    },
+    Onboarding: {
+      screen: OnboardingScreen,
     },
   },
   {initialRouteName: 'Home'},

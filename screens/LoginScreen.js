@@ -48,7 +48,7 @@ class LoginScreen extends React.Component {
           <ClickableButton
             type="secondary"
             title="Done"
-            onPress={() => navigation.push('Dashboard')}
+            onPress={() => navigation.push('Onboarding')}
           />
         </View>
         <Text style={{textAlign: 'center', textDecorationLine: 'underline'}}>
