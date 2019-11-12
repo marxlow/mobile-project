@@ -1,6 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {View, Text} from 'react-native';
+import {Icon} from '@ant-design/react-native';
 import TabNavButton from '../../shared/components/TabNavButton';
 import ActivityTab from './components/ActivityTab';
 import GroupTab from './components/GroupTab';
