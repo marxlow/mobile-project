@@ -5,11 +5,20 @@ import {InputItem} from '@ant-design/react-native';
 import BrandLogo from '../shared/components/BrandLogo';
 import ClickableButton from '../shared/components/ClickableButton';
 
+import authApi from '../services/authApi';
+
 class LoginScreen extends React.Component {
   state = {
     email: '',
     password: '',
   };
+
+  onPressLogin = async () => {
+    const {email, password} = this.state;
+    await authApi.login(email, password);
+    this.props.navigation.push('Onboarding');
+  };
+
   render() {
     const {email, password} = this.state;
     const {navigation} = this.props;
@@ -48,7 +57,7 @@ class LoginScreen extends React.Component {
           <ClickableButton
             type="secondary"
             title="Done"
-            onPress={() => navigation.push('Onboarding')}
+            onPress={this.onPressLogin}
           />
         </View>
         <Text style={{textAlign: 'center', textDecorationLine: 'underline'}}>
