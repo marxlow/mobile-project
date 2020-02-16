@@ -27,13 +27,20 @@ const BrandLogo = ({
   rounded = false,
   bordered = false,
   imageSrcUrl,
+  onPress,
 }) => {
   const dimension = getImageDimension(size);
   const roundedStyle = getRoundedStyle(rounded, bordered, dimension.width);
   const uri =
     imageSrcUrl ||
     'https://icon-library.net/images/piggy-bank-icon-png/piggy-bank-icon-png-9.jpg';
-  return <Image style={{...dimension, ...roundedStyle}} source={{uri}} />;
+  return (
+    <Image
+      style={{...dimension, ...roundedStyle}}
+      source={{uri}}
+      onPress={onPress}
+    />
+  );
 };
 
 export default BrandLogo;

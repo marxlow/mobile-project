@@ -2,14 +2,17 @@
 import React from 'react';
 import {createForm} from 'rc-form';
 import {InputItem, Toast} from '@ant-design/react-native';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableWithoutFeedback} from 'react-native';
+import ImagePicker from 'react-native-image-picker';
+
 import ClickableButton from '../../../shared/components/ClickableButton';
+import BrandLogo from '../../../shared/components/BrandLogo';
 
 class ProfileTab extends React.Component {
   state = {
     isLoading: false,
+    logo: 'https://picsum.photos/200/200',
     formErrors: {},
-    formFields: ['email', 'mobile'],
     email: 'hello@gmail.com',
     mobile: '87764551',
   };
@@ -28,13 +31,22 @@ class ProfileTab extends React.Component {
   };
 
   onErrorClick = key => {
+    // TODO: Doesn't work at the moment. Investigate for alternative feedbacks
     Toast.info(this.state.formErrors[key], 1);
   };
 
-  onMobileChange = value => {
-    // Validation for mobile errors
-    const hasAlphabets = /[a-z]/.test(value);
-    this.setState({mobile: {value, error: hasAlphabets}});
+  onImagePressed = () => {
+    const options = {
+      title: 'Select logo',
+      storageOptions: {
+        skipBackup: true,
+        path: 'images',
+      },
+    };
+
+    ImagePicker.showImagePicker(options, response => {
+      this.setState({logo: response.uri});
+    });
   };
 
   render() {
@@ -43,6 +55,25 @@ class ProfileTab extends React.Component {
     const {getFieldDecorator} = form;
     return (
       <>
+        <View
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            padding: spacingSize,
+            backgroundColor: 'lightgrey',
+          }}>
+          <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+            <TouchableWithoutFeedback onPress={this.onImagePressed}>
+              <View>
+                <BrandLogo
+                  size="sm"
+                  rounded={true}
+                  imageSrcUrl={this.state.logo}
+                />
+              </View>
+            </TouchableWithoutFeedback>
+          </View>
+        </View>
         <View style={{flex: 7, padding: spacingSize}}>
           <View style={{paddingBottom: spacingSize}}>
             <Text>Email</Text>

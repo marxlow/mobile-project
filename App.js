@@ -20,7 +20,8 @@ const AppNavigator = createStackNavigator(
       screen: DashboardScreen,
     },
   },
-  {initialRouteName: 'Home'},
+  // {initialRouteName: 'Home'},
+  {initialRouteName: 'Dashboard'},
 );
 
 export default createAppContainer(AppNavigator);
