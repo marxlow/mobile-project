@@ -23,7 +23,7 @@ const login = async (username, password) => {
   const user = await fetchUser();
   const {id, email} = user;
   await AsyncStorage.setItem('userEmail', email);
-  await AsyncStorage.setItem('userId', id);
+  await AsyncStorage.setItem('userId', `${id}`);
 };
 
 export default {

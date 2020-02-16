@@ -1,11 +1,11 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {View, Text} from 'react-native';
-import {Icon} from '@ant-design/react-native';
 import TabNavButton from '../../shared/components/TabNavButton';
 import ActivityTab from './components/ActivityTab';
 import GroupTab from './components/GroupTab';
 import FriendsTab from './components/FriendsTab';
+import ProfileTab from './components/ProfileTab';
 
 const spacingSize = 15;
 class DashboardScreen extends React.Component {
@@ -23,13 +23,15 @@ class DashboardScreen extends React.Component {
         return <ActivityTab spacingSize={spacingSize} />;
       case 'group':
         return <GroupTab spacingSize={spacingSize} />;
+      case 'profile':
+        return <ProfileTab spacingSize={spacingSize} />;
       default:
         return <FriendsTab spacingSize={spacingSize} />;
     }
   };
 
   render() {
-    const navButtonTitles = ['activity', 'group', 'friends'];
+    const navButtonTitles = ['activity', 'group', 'friends', 'profile'];
     return (
       <View style={{flexDirection: 'column', flex: 1}}>
         {/* ~~~~~~~~~~~ */}

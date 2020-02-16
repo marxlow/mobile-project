@@ -60,7 +60,7 @@ const ActivityTab = ({spacingSize}) => {
         <View style={{flex: 1, justifyContent: 'center'}}>
           <TouchableHighlight
             style={{
-              backgroundColor: 'inherit',
+              backgroundColor: 'transparent',
               borderRadius: 100,
               borderWidth: 0,
             }}>
